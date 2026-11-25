@@ -1,3 +1,16 @@
+## Unreleased
+
+### Fixed
+
+- Match SlateDB 0.18 synchronous transaction creation and use the same
+  slatedb-common 0.18 metrics types as SlateDB.
+
+## 0.2.1 - 2026-11-23
+
+### Changed
+
+- Upgrade DuckDB to `v2.0.1`.
+
 # 0.2.0
 
 ## Fixed
