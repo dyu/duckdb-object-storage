@@ -20,4 +20,12 @@ fi
 
 cd $SCRIPT_DIR
 
-GEN=ninja make release
+export GEN='ninja'
+
+if [ "$XC" = '1' ]; then
+  BIN_DIR=`readlink -f ~/.pixi/envs/xclang/opt/xclang/bin`
+  export CC="$BIN_DIR/clang"
+  export CXX="$BIN_DIR/clang++"
+fi
+
+make release
