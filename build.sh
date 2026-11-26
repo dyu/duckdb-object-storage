@@ -26,6 +26,10 @@ if [ "$XC" = '1' ]; then
   BIN_DIR=`readlink -f ~/.pixi/envs/xclang/opt/xclang/bin`
   export CC="$BIN_DIR/clang"
   export CXX="$BIN_DIR/clang++"
+elif command -v clang-20 > /dev/null 2>&1; then
+  BIN_DIR=`dirname $(which clang-20)`
+  export CC="$BIN_DIR/clang-20"
+  export CXX="$BIN_DIR/clang++-20"
 fi
 
 make release
